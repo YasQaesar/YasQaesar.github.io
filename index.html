@@ -10,9 +10,9 @@
 
 :root{
 --bg:#020738;
---glass:rgba(255,255,255,.08);
---border:rgba(255,255,255,.15);
 --text:#ffffff;
+--glass:rgba(255,255,255,.12);
+--border:rgba(255,255,255,.18);
 --magenta:#8A0383;
 --pink:#FF82AA;
 --cyan:#43CCF3;
@@ -23,55 +23,68 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
+font-family:Segoe UI,Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(-45deg,#020738,#8A0383,#020738,#43CCF3);
-background-size:400% 400%;
-animation:bgmove 15s ease infinite;
+
+background:
+linear-gradient(
+rgba(2,7,56,.65),
+rgba(2,7,56,.65)
+),
+url("ChatGPT%20Image%20Jun%201,%202026,%2012_11_02%20PM.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
 color:white;
-min-height:100vh;
 overflow-x:hidden;
+min-height:100vh;
+
 }
 
-@keyframes bgmove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
+/* Navbar */
 
 nav{
 position:fixed;
 top:20px;
 left:50%;
 transform:translateX(-50%);
-width:90%;
+width:92%;
+padding:15px 25px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 25px;
+
 background:var(--glass);
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
+
 border:1px solid var(--border);
-border-radius:20px;
-z-index:999;
+border-radius:25px;
+
+z-index:1000;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:30px;
+font-weight:700;
 color:var(--gold);
+letter-spacing:2px;
 }
 
 .menu{
 display:flex;
-gap:20px;
+gap:25px;
 }
 
 .menu a{
-color:white;
 text-decoration:none;
+color:white;
+font-weight:500;
 transition:.3s;
 }
 
@@ -79,143 +92,249 @@ transition:.3s;
 color:var(--cyan);
 }
 
-.theme-btn{
-cursor:pointer;
-background:transparent;
-border:1px solid white;
-padding:8px 15px;
-border-radius:10px;
-color:white;
+.right-tools{
+display:flex;
+gap:10px;
 }
+
+.tool-btn{
+padding:10px 15px;
+border:none;
+cursor:pointer;
+border-radius:12px;
+background:rgba(255,255,255,.1);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+/* Hero */
 
 .hero{
 min-height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
-padding:120px 30px;
+justify-content:center;
+padding:120px 20px 50px;
 }
 
-.glass-card{
-max-width:850px;
+.card{
+
+max-width:900px;
 width:100%;
+
 background:rgba(255,255,255,.08);
-backdrop-filter:blur(25px);
+backdrop-filter:blur(20px);
+
 border:1px solid rgba(255,255,255,.15);
-border-radius:30px;
+
 padding:50px;
-box-shadow:0 0 40px rgba(67,204,243,.2);
+
+border-radius:35px;
+
 text-align:center;
+
+box-shadow:
+0 0 50px rgba(67,204,243,.25),
+0 0 80px rgba(138,3,131,.15);
+
 }
 
-.hero h1{
-font-size:55px;
+.card h1{
+
+font-size:60px;
 margin-bottom:20px;
+color:white;
+
 }
 
-.hero p{
+.card h2{
+
+font-size:24px;
+font-weight:400;
+margin-bottom:25px;
+
+color:var(--gold);
+
+}
+
+.card p{
+
 font-size:18px;
 line-height:1.8;
-opacity:.9;
+
 }
 
 .tags{
-margin-top:25px;
+
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
 gap:10px;
+
+margin-top:25px;
+
 }
 
 .tag{
+
+padding:10px 18px;
+
 background:rgba(255,255,255,.1);
-padding:10px 15px;
+
 border-radius:50px;
-border:1px solid rgba(255,255,255,.2);
+
+border:1px solid rgba(255,255,255,.15);
+
 }
 
+/* Buttons */
+
 .buttons{
+
 margin-top:35px;
+
 display:flex;
 justify-content:center;
-gap:20px;
 flex-wrap:wrap;
+gap:20px;
+
 }
 
 .btn{
+
 padding:15px 25px;
 border-radius:15px;
+
 text-decoration:none;
 font-weight:bold;
+
 transition:.3s;
+
 }
 
 .primary{
+
 background:var(--cyan);
 color:black;
+
 }
 
 .secondary{
+
 background:var(--magenta);
 color:white;
+
 }
 
 .btn:hover{
-transform:translateY(-5px);
+
+transform:translateY(-6px);
+
 }
 
+/* Social */
+
 .socials{
+
 position:fixed;
-left:20px;
+
+left:25px;
 top:50%;
+
 transform:translateY(-50%);
+
 display:flex;
 flex-direction:column;
+
 gap:15px;
+
 }
 
 .socials a{
-width:45px;
-height:45px;
+
+width:50px;
+height:50px;
+
 display:flex;
-align-items:center;
 justify-content:center;
-border-radius:50%;
-background:rgba(255,255,255,.1);
-color:white;
+align-items:center;
+
 text-decoration:none;
+
+background:rgba(255,255,255,.12);
+
+border-radius:50%;
+
+color:white;
+
 backdrop-filter:blur(10px);
+
+transition:.3s;
+
 }
 
+.socials a:hover{
+
+transform:scale(1.15);
+
+}
+
+/* Stats */
+
 .stats{
+
 display:grid;
+
 grid-template-columns:repeat(5,1fr);
+
 gap:20px;
+
 padding:40px;
+
 }
 
 .stat{
+
 background:rgba(255,255,255,.08);
-padding:25px;
-border-radius:20px;
-text-align:center;
+
 backdrop-filter:blur(15px);
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
 }
 
-.stat h2{
+.stat h3{
+
+font-size:35px;
 color:var(--gold);
+
+margin-bottom:10px;
+
 }
+
+/* Footer */
 
 footer{
-padding:30px;
+
 text-align:center;
-opacity:.8;
+padding:30px;
+
 }
 
-.light-mode{
+/* Light Mode */
+
+.light{
+
 background:#FFE1D2 !important;
 color:black !important;
+
 }
+
+/* Responsive */
 
 @media(max-width:900px){
 
@@ -223,8 +342,8 @@ color:black !important;
 display:none;
 }
 
-.hero h1{
-font-size:35px;
+.card h1{
+font-size:36px;
 }
 
 .stats{
@@ -240,9 +359,12 @@ grid-template-columns:repeat(2,1fr);
 
 <nav>
 
-<div class="logo">YAS.DEV</div>
+<div class="logo">
+YAS.DEV
+</div>
 
 <div class="menu">
+
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Services</a>
@@ -252,47 +374,52 @@ grid-template-columns:repeat(2,1fr);
 <a href="#">Certificates</a>
 <a href="#">Blog</a>
 <a href="#">Contact</a>
+
 </div>
 
-<button class="theme-btn" onclick="toggleTheme()">
-Theme
+<div class="right-tools">
+
+<button class="tool-btn" onclick="toggleTheme()">
+🌙
 </button>
+
+</div>
 
 </nav>
 
 <div class="socials">
 
 <a href="https://github.com/YasQaesar" target="_blank">
-G
+GH
 </a>
 
 <a href="https://wa.me/93748879952" target="_blank">
-W
+WA
 </a>
 
 </div>
 
 <section class="hero">
 
-<div class="glass-card">
+<div class="card">
 
-<h1>
-WELCOME TO YASAMIN QAESARI PORTFOLIO
-</h1>
+<h1>WELCOME TO YASAMIN QAESARI PORTFOLIO</h1>
+
+<h2>YAS.DEV</h2>
 
 <p>
-Business • Finance • Health Management • Research • Writing •
+Research • Health Science • Finance • Management • Writing •
 Digital Solutions • Data Analytics • Education • AI Productivity
 </p>
 
 <div class="tags">
 
-<div class="tag">Business & Finance</div>
-<div class="tag">Health Management</div>
 <div class="tag">Research</div>
+<div class="tag">Finance</div>
+<div class="tag">Health Science</div>
 <div class="tag">Author</div>
-<div class="tag">Digital Solutions</div>
-<div class="tag">Data Analytics</div>
+<div class="tag">UN Volunteer</div>
+<div class="tag">Digital Creator</div>
 
 </div>
 
@@ -315,47 +442,43 @@ Download Resume
 <section class="stats">
 
 <div class="stat">
-<h2>15+</h2>
+<h3>15+</h3>
 <p>Projects</p>
 </div>
 
 <div class="stat">
-<h2>2</h2>
+<h3>2</h3>
 <p>Books</p>
 </div>
 
 <div class="stat">
-<h2>3+</h2>
+<h3>3+</h3>
 <p>Experience</p>
 </div>
 
 <div class="stat">
-<h2>100+</h2>
+<h3>100+</h3>
 <p>Certificates</p>
 </div>
 
 <div class="stat">
-<h2>20+</h2>
+<h3>20+</h3>
 <p>Clients</p>
 </div>
 
 </section>
 
 <footer>
-
 © 2026 YAS.DEV | Yasamin Qaesari
-
 </footer>
 
 <script>
 
 function toggleTheme(){
-
-document.body.classList.toggle("light-mode");
-
+document.body.classList.toggle("light");
 }
 
 </script>
 
 </body>
-</html>
+</html> 
