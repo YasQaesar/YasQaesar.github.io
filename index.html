@@ -3,10 +3,359 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yasamin Qaesari</title>
+
+<title>YAS.DEV | Yasamin Qaesari</title>
+
+<style>
+
+:root{
+--bg:#020738;
+--glass:rgba(255,255,255,.08);
+--border:rgba(255,255,255,.15);
+--text:#ffffff;
+--magenta:#8A0383;
+--pink:#FF82AA;
+--cyan:#43CCF3;
+--gold:#FFD700;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#020738,#8A0383,#020738,#43CCF3);
+background-size:400% 400%;
+animation:bgmove 15s ease infinite;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:var(--glass);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:20px;
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:var(--gold);
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.menu a:hover{
+color:var(--cyan);
+}
+
+.theme-btn{
+cursor:pointer;
+background:transparent;
+border:1px solid white;
+padding:8px 15px;
+border-radius:10px;
+color:white;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 30px;
+}
+
+.glass-card{
+max-width:850px;
+width:100%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+padding:50px;
+box-shadow:0 0 40px rgba(67,204,243,.2);
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+opacity:.9;
+}
+
+.tags{
+margin-top:25px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.tag{
+background:rgba(255,255,255,.1);
+padding:10px 15px;
+border-radius:50px;
+border:1px solid rgba(255,255,255,.2);
+}
+
+.buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 25px;
+border-radius:15px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.primary{
+background:var(--cyan);
+color:black;
+}
+
+.secondary{
+background:var(--magenta);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.socials{
+position:fixed;
+left:20px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.socials a{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.1);
+color:white;
+text-decoration:none;
+backdrop-filter:blur(10px);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+padding:40px;
+}
+
+.stat{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(15px);
+}
+
+.stat h2{
+color:var(--gold);
+}
+
+footer{
+padding:30px;
+text-align:center;
+opacity:.8;
+}
+
+.light-mode{
+background:#FFE1D2 !important;
+color:black !important;
+}
+
+@media(max-width:900px){
+
+.menu{
+display:none;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
 </head>
+
 <body>
-<h1>Welcome to Yas.dev</h1>
-<p>Official Portfolio Website of Yasamin Qaesari</p>
+
+<nav>
+
+<div class="logo">YAS.DEV</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Projects</a>
+<a href="#">Books</a>
+<a href="#">Experience</a>
+<a href="#">Certificates</a>
+<a href="#">Blog</a>
+<a href="#">Contact</a>
+</div>
+
+<button class="theme-btn" onclick="toggleTheme()">
+Theme
+</button>
+
+</nav>
+
+<div class="socials">
+
+<a href="https://github.com/YasQaesar" target="_blank">
+G
+</a>
+
+<a href="https://wa.me/93748879952" target="_blank">
+W
+</a>
+
+</div>
+
+<section class="hero">
+
+<div class="glass-card">
+
+<h1>
+WELCOME TO YASAMIN QAESARI PORTFOLIO
+</h1>
+
+<p>
+Business • Finance • Health Management • Research • Writing •
+Digital Solutions • Data Analytics • Education • AI Productivity
+</p>
+
+<div class="tags">
+
+<div class="tag">Business & Finance</div>
+<div class="tag">Health Management</div>
+<div class="tag">Research</div>
+<div class="tag">Author</div>
+<div class="tag">Digital Solutions</div>
+<div class="tag">Data Analytics</div>
+
+</div>
+
+<div class="buttons">
+
+<a href="#" class="btn primary">
+Explore My Work
+</a>
+
+<a href="#" class="btn secondary">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>15+</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h2>2</h2>
+<p>Books</p>
+</div>
+
+<div class="stat">
+<h2>3+</h2>
+<p>Experience</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Certificates</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Clients</p>
+</div>
+
+</section>
+
+<footer>
+
+© 2026 YAS.DEV | Yasamin Qaesari
+
+</footer>
+
+<script>
+
+function toggleTheme(){
+
+document.body.classList.toggle("light-mode");
+
+}
+
+</script>
+
 </body>
 </html>
